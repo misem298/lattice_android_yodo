@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.gamelattice"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 4
+        versionName "lattice checkers 2.4"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation files('libs/jme3-android-3.3.2-stable.jar')
+    implementation files('libs/jme3-android-native-3.3.2-stable.jar')
+    implementation files('libs/jme3-core.jar')
+    implementation files('libs/jme3-effects.jar')
+    //implementation files('libs/android-support-v4.jar')
+    //implementation files('libs/aFilechooser-1.0.1-sources.jar')
+    //implementation files('libs/aFilechooser-1.0.1-javadoc.jar')
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.yodo1.mas:google:4.1.0'
+}

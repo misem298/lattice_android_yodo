@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="40dp"
+    android:orientation="vertical"
+    android:id="@+id/layout_root" >
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="260dp"
+        android:layout_height="140dp"
+        android:textSize = "15dp"  >
+    </ListView>
+
+    <EditText
+        android:id="@+id/file_name"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:hint="file name here"
+        android:inputType="text"
+        android:textColorHint="#FE8DAB"
+        android:textSize="20dp">
+        <requestFocus />
+    </EditText>
+
+    <TableRow
+        android:layout_width="260dp"
+        android:layout_height="50dp" >
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
+    </TableRow>
+
+</LinearLayout>
+

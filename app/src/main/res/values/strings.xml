@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">lattice_checkers</string>
+    <string name="editTextDialogUserInput" />
+    <!-- Strings used for fragments for navigation -->
+
+</resources>
