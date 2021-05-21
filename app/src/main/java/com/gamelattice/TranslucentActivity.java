@@ -11,8 +11,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.error.Yodo1MasError;
 
 public class TranslucentActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
    // public static final String EXTRA_REPLY = "com.example.android.twoactivities.extra.REPLY";
@@ -45,6 +49,14 @@ public class TranslucentActivity extends AppCompatActivity implements DialogInte
                 .setPositiveButton("YES", this)
                 .create();
                 dialog.show();
+                Yodo1Mas.getInstance().init(this, "EFbwsxe0ocS", new Yodo1Mas.InitListener() {
+                    @Override
+                        public void onMasInitSuccessful() {
+                        }
+                    @Override
+                        public void onMasInitFailed(@NonNull Yodo1MasError error) {
+                        }
+                    });
     }
 
     @Override

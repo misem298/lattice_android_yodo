@@ -1,5 +1,6 @@
 package com.gamelattice;
 
+import android.app.Activity;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
@@ -27,20 +28,20 @@ public class MainActivity extends AndroidHarness {
 
     public MainActivity() {
         appClass = "com.gamelattice.GameStart";
-        exitDialogTitle = "Exit?";
-        exitDialogMessage = "Are you sure you want to quit?";
+        //exitDialogTitle = "Exit?";
+        //exitDialogMessage = "Are you sure you want to quit?";
         // view  = findViewById(R.id.editText);
         //this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //dm = getResources().getDisplayMetrics();
         // Set the default logging level (default=Level.INFO, Level.ALL=All Debug Info)
-        LogManager.getLogManager().getLogger("").setLevel(Level.INFO);
+        //LogManager.getLogManager().getLogger("").setLevel(Level.INFO);
 
     }
 
         @Override
         public void onCreate (Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            Yodo1Mas.getInstance().init(this, "ca-app-pub-5784311004955543~1150310191", new Yodo1Mas.InitListener() {
+            Yodo1Mas.getInstance().init(this, "EFbwsxe0ocS", new Yodo1Mas.InitListener() {
                 @Override
                 public void onMasInitSuccessful() {
                 }
@@ -49,6 +50,9 @@ public class MainActivity extends AndroidHarness {
                 public void onMasInitFailed(@NonNull Yodo1MasError error) {
                 }
             });
+           // appClass = "com.gamelattice.GameStart";
+            //exitDialogTitle = "Exit?";
+            //exitDialogMessage = "Are you sure you want to quit?";
     }
     /*@Override
     public void onConfigurationChanged(Configuration newConfig) {

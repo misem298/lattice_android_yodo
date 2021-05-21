@@ -1,5 +1,6 @@
 package com.gamelattice;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -18,6 +19,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.yodo1.mas.Yodo1Mas;
+import com.yodo1.mas.error.Yodo1MasError;
+
 import java.util.ArrayList;
 
 public class LoadFileActivity extends AppCompatActivity {
@@ -37,6 +42,15 @@ public class LoadFileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Yodo1Mas.getInstance().init(this, "EFbwsxe0ocS", new Yodo1Mas.InitListener() {
+            @Override
+            public void onMasInitSuccessful() {
+            }
+
+            @Override
+            public void onMasInitFailed(@NonNull Yodo1MasError error) {
+            }
+        });
         gd = new GameData(GameStart.ctx);
         fileList = gd.getModeFileNames(GameStart.ctx);
         setContentView(R.layout.activity_load_file);
